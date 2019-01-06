@@ -1,0 +1,100 @@
+{
+  Reservations: [{
+      Instances: [{
+          AmiLaunchIndex: 0,
+          Architecture: "x86_64",
+          BlockDeviceMappings: [{
+              DeviceName: "/dev/xvda",
+              Ebs: {
+                AttachTime: 2019-01-05 08:18:20 +0000 UTC,
+                DeleteOnTermination: true,
+                Status: "attached",
+                VolumeId: "vol-0d5a9b58d5a9b6cd8"
+              }
+            }],
+          ClientToken: "",
+          CpuOptions: {
+            CoreCount: 1,
+            ThreadsPerCore: 1
+          },
+          EbsOptimized: false,
+          EnaSupport: true,
+          HibernationOptions: {
+            Configured: false
+          },
+          Hypervisor: "xen",
+          ImageId: "ami-009d6802948d06e52",
+          InstanceId: "i-02a3b23acf213dbf9",
+          InstanceType: "t2.micro",
+          KeyName: "newaws",
+          LaunchTime: 2019-01-05 08:18:19 +0000 UTC,
+          Monitoring: {
+            State: "disabled"
+          },
+          NetworkInterfaces: [{
+              Association: {
+                IpOwnerId: "amazon",
+                PublicDnsName: "ec2-18-212-160-86.compute-1.amazonaws.com",
+                PublicIp: "18.212.160.86"
+              },
+              Attachment: {
+                AttachTime: 2019-01-05 08:18:19 +0000 UTC,
+                AttachmentId: "eni-attach-0d31d338c71b99d4b",
+                DeleteOnTermination: true,
+                DeviceIndex: 0,
+                Status: "attached"
+              },
+              Description: "",
+              Groups: [{
+                  GroupId: "sg-014bd4db86407a55a",
+                  GroupName: "launch-wizard-11"
+                }],
+              MacAddress: "12:1f:70:5f:93:66",
+              NetworkInterfaceId: "eni-0041a0cb4e427a748",
+              OwnerId: "043305910316",
+              PrivateDnsName: "ip-172-31-83-158.ec2.internal",
+              PrivateIpAddress: "172.31.83.158",
+              PrivateIpAddresses: [{
+                  Association: {
+                    IpOwnerId: "amazon",
+                    PublicDnsName: "ec2-18-212-160-86.compute-1.amazonaws.com",
+                    PublicIp: "18.212.160.86"
+                  },
+                  Primary: true,
+                  PrivateDnsName: "ip-172-31-83-158.ec2.internal",
+                  PrivateIpAddress: "172.31.83.158"
+                }],
+              SourceDestCheck: true,
+              Status: "in-use",
+              SubnetId: "subnet-57b9bf78",
+              VpcId: "vpc-740d940f"
+            }],
+          Placement: {
+            AvailabilityZone: "us-east-1c",
+            GroupName: "",
+            Tenancy: "default"
+          },
+          PrivateDnsName: "ip-172-31-83-158.ec2.internal",
+          PrivateIpAddress: "172.31.83.158",
+          PublicDnsName: "ec2-18-212-160-86.compute-1.amazonaws.com",
+          PublicIpAddress: "18.212.160.86",
+          RootDeviceName: "/dev/xvda",
+          RootDeviceType: "ebs",
+          SecurityGroups: [{
+              GroupId: "sg-014bd4db86407a55a",
+              GroupName: "launch-wizard-11"
+            }],
+          SourceDestCheck: true,
+          State: {
+            Code: 16,
+            Name: "running"
+          },
+          StateTransitionReason: "",
+          SubnetId: "subnet-57b9bf78",
+          VirtualizationType: "hvm",
+          VpcId: "vpc-740d940f"
+        }],
+      OwnerId: "043305910316",
+      ReservationId: "r-0b11d2f5a70d3fe13"
+    }]
+}
