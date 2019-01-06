@@ -1,0 +1,3 @@
+resource aws.instance "foo" {
+    {{if .IsInstanceInVPC()}} Hello {{end}}
+}

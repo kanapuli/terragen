@@ -16,6 +16,9 @@ package cmd
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"text/template"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
@@ -27,6 +30,12 @@ import (
 
 var svc *ec2.EC2
 
+const awsEC2Template = `
+resource aws.instance "foo" {
+	{{if .IsInstanceInVPC}} Hello world {{end}}
+}
+`
+
 // ec2Cmd represents the ec2 command
 var ec2Cmd = &cobra.Command{
 	Use:   "ec2",
@@ -36,10 +45,22 @@ var ec2Cmd = &cobra.Command{
 	terragen ec2 {{ec2.arn}} - will generate terraform for the ec2 arn specified
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		ec2 := instance{}
+		ec2 := new(instance)
 		ec2.describeInstance()
 		inVPC := ec2.IsInstanceInVPC()
 		fmt.Println(inVPC)
+		t := template.New("aws_instance")
+		t, err := t.Parse(awsEC2Template)
+		if err != nil {
+			log.Println("fhfd", err)
+			return
+		}
+		err = t.Execute(os.Stdout, ec2)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+
 	},
 }
 
